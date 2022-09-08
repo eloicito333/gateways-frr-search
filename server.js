@@ -26,6 +26,6 @@ app.post(/\/get\/*/, (req, res) => {
     return proxy.request(req, res);
 });
 
-app.on('upgrade', (clientRequest, clientSocket, clientHead) => proxy.upgrade(clientRequest, clientSocket, clientHead));
+server.on('upgrade', (clientRequest, clientSocket, clientHead) => proxy.upgrade(clientRequest, clientSocket, clientHead));
 
 server.listen(process.env.PORT || 8080, () => console.log(`Server running at port: ${process.env.PORT}`))
