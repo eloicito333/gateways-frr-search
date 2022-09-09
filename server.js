@@ -16,7 +16,9 @@ app.use(requireHTTPS)
 
 const proxy = new Corrosion({
     codec: 'xor', // apply basic xor encryption to url parameters in an effort to evade filters. Optional.
-    prefix: '/get/' // specify the endpoint (prefix). Optional.
+    prefix: '/get/', // specify the endpoint (prefix). Optional.
+    title: 'Gataway',
+    ssl: true
 });
 
 proxy.bundleScripts();
